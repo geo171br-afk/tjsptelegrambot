@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: tjsptelegrambot
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install
+      playwright install-deps
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        value: "7152880157:AAGt6SUNaDvN2RxWc88Px_eMaxK3rY3OdnY"
+      - key: GIST_ID
+        value: "<script src="4876c09bba3ae94b29c7f5663312d802"
+      - key: GITHUB_TOKEN
+        value: "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"
